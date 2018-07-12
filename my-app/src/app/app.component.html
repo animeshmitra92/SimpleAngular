@@ -1,0 +1,52 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
+  <div style="text-align:center">
+    <img width="50" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+  </div>
+  <div class="container" style="text-align:center">
+    <div class="list-group">
+      <h2>Please enter your details to register </h2>
+    </div>
+    <label for="firstName">First Name:</label>
+
+    <input class="form-control" id="firstName" name="firstName" type="text" [(ngModel)]="firstName" required>
+
+    <label for="lastName">Last Name:</label>
+
+    <input class="form-control" id="lastName" name="lastName" type="text" [(ngModel)]="lastName" required>
+
+    <label for="age">Age:</label>
+    <input class="form-control" id="age" name="age" type="number" [(ngModel)]="age" required>
+
+    <label>Gender:</label>
+    <select class="form-control" ng-model="gender">
+      <option value="male">Male</option>
+      <option value="fmale">Female</option>
+    </select>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      <textarea class="form-control" id="address" rows="3" required></textarea>
+    </div>
+
+    <label for="email">Email:</label>
+    <input class="form-control" id="email" name="email" type="email" [(ngModel)]="email" required>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <br>
+    <div class="form-group checkbox">
+      <div class="col-lg-6 ">
+        <input type="checkbox" name="terms" required> Confirm that you've read the Terms and Condition
+      </div>
+    </div>
+    <div class="panel-footer">
+      <button class="btn btn-outline-secondary" type="reset">Cancel</button>
+
+      <button class="btn btn-outline-secondary" type="submit">Submit</button>
+    </div>
+  </div>
+</form>
+
+Angular Generated Form Model : {{employeeForm.value | json}}
